@@ -23,7 +23,9 @@ Download the repository and click run.
 ## Loading Workout Data
 1. Add the .csv file into the **FitBod** folder and update the **workoutFileName** variable in the **Constants.swift** file.
 
-The workouts need to be in the following format: {Date: MMM dd YYYY},{Exercise Name},{# of Reps},{Weight} ex:"Oct 11 2020,Back Squat,6,245"
+The workouts need to be in the following format:
+{Date: MMM dd yyyy},{Exercise Name},{# of Reps},{Weight} 
+Ex:"Oct 11 2020,Back Squat,6,245"
 
 ## Creator
 
