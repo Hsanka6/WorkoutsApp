@@ -21,14 +21,14 @@ This app shows a list of exercises. When you tap one an exercise, you can see yo
 
 ## Installation
 
-Download the repository and click run.
+Download the repository and click run. Project deafults to loading data from [workoutData.csv] and if you want to change the source of workout data follow the **Loading Workout Data** section below
 
 ## Features
 1. Takes in workout data from .csv file and processes them into a table which shows your all time One Rep Max
 2. When you tap an exercise, you can see the history of your one rep maxes since your first workout
 
 ## Loading Workout Data
-1. Add the .csv file into the **FitBod** folder and update the **workoutFileName** variable in the **Constants.swift** file.
+1. Add the .csv file into the **FitBod** folder and update the **workoutFileName** variable in the **Constants.swift** file if you want to change the name of the workouts file.
 
 The workouts need to be in the following format:
 {Date: MMM dd yyyy},{Exercise Name},{# of Reps},{Weight} 
@@ -41,4 +41,5 @@ https://github.com/Hsanka6
 
 [swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
+[workoutData.csv]:https://drive.google.com/file/d/1HomqPGU5CW6Wqk5ykM0goZLAiAgtTtl2
 
