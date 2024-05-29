@@ -13,7 +13,11 @@ This app shows a list of exercises. When you tap one an exercise, you can see yo
 - Swift 5
 
 ## Assumptions
-1. Didn't need to account for user rotating phone
+1. User doesn't need to rotate
+2. There's at least 2 months of data therefore the graph has strides of 2 months 
+3. workoutData.csv file is not empty 
+4. Workouts are formatted like this "Oct 11 2020,Back Squat,6,245" in workoutData.csv file
+5. Rounded one rep max values to nearest integer
 
 ## Installation
 
