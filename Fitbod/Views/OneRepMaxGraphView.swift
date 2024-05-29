@@ -25,6 +25,7 @@ struct OneRepMaxGraphView: View {
                     )
                     .foregroundStyle(Color(Constants.AppColor.primaryColor))
                     .interpolationMethod(.linear)
+                    .lineStyle(StrokeStyle(lineWidth: 1))
                     
                     PointMark(
                         x: .value(Constants.ChartConstants.xAxis, max.date),
@@ -33,7 +34,7 @@ struct OneRepMaxGraphView: View {
                     .symbol {
                         Circle()
                             .foregroundColor(Color(Constants.AppColor.backgroundColor))
-                            .frame(width: 10, height: 10)
+                            .frame(width: 7, height: 7)
                     }
                     
                     PointMark(
@@ -42,9 +43,9 @@ struct OneRepMaxGraphView: View {
                     )
                     .symbol {
                         Circle()
-                            .strokeBorder(lineWidth: 2)
+                            .strokeBorder(lineWidth: 1.5)
                             .foregroundColor(Color(Constants.AppColor.primaryColor))
-                            .frame(width: 10, height: 10)
+                            .frame(width: 7, height: 7)
                     }
                 }
             }
@@ -71,7 +72,7 @@ struct OneRepMaxGraphView: View {
             }
             .chartYScale(domain: minYAxis...maxYAxis)
             .padding(EdgeInsets(top: 10, leading: Constants.sideMarginPadding, bottom: 0, trailing: Constants.sideMarginPadding))
-            .frame(height: 300)
+            .frame(height: 200)
             .chartXScale(domain: minXAxis...maxXAxis)
         }
         .background(Color(Constants.AppColor.backgroundColor))
