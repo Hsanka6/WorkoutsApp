@@ -21,7 +21,7 @@ This app shows a list of exercises. When you tap one an exercise, you can see yo
 
 ## Installation
 
-Download the repository and click run. Project deafults to loading data from [workoutData.csv] and if you want to change the source of workout data follow the **Loading Workout Data** section below
+Download the repository and click run. Project defaults to loading data from [workoutData.csv] and if you want to change the source of workout data follow the **Loading Workout Data** section below
 
 ## Features
 1. Takes in workout data from .csv file and processes them into a table which shows your all time One Rep Max
