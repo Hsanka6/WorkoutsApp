@@ -25,3 +25,17 @@ extension DateFormatter {
     }
 }
 
+extension Date {
+    func startOfMonth() -> Date {
+        var components = Calendar.current.dateComponents([.year, .month], from: self)
+        components.day = 1
+        return Calendar.current.date(from: components) ?? Date()
+    }
+    
+    func endOfMonth() -> Date {
+        var components = Calendar.current.dateComponents([.year, .month], from: self)
+        components.day = 30
+        return Calendar.current.date(from: components) ?? Date()
+    }
+}
+

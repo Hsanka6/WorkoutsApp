@@ -15,9 +15,9 @@ class ExerciseDetailViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         super.setUp()
         let oneRepMaxes = [
-            OneRepMax(id: "1", weight: 100, date: DateFormatter().convertDateStringToDate(date: "Aug 11, 2022") ?? Date()),
-            OneRepMax(id: "2", weight: 120, date: DateFormatter().convertDateStringToDate(date: "Aug 11, 2022") ?? Date()),
-            OneRepMax(id: "3", weight: 110, date: DateFormatter().convertDateStringToDate(date: "Aug 11, 2022") ?? Date())
+            OneRepMax(id: "1", weight: 100, date: DateFormatter().convertDateStringToDate(date: "Aug 11 2022") ?? Date()),
+            OneRepMax(id: "2", weight: 120, date: DateFormatter().convertDateStringToDate(date: "Aug 11 2022") ?? Date()),
+            OneRepMax(id: "3", weight: 110, date: DateFormatter().convertDateStringToDate(date: "Aug 11 2022") ?? Date())
         ]
         let exercise = Exercise(name: "Deadlift", personalRecord: 120, oneRepMaxes: oneRepMaxes)
         viewModel = ExerciseDetailViewModel(exercise: exercise)
@@ -55,6 +55,20 @@ class ExerciseDetailViewModelTests: XCTestCase {
         let min = viewModel.getMinValueForGraph(oneRepMaxes: oneRepMaxes)
 
         XCTAssertEqual(min, 110)
+    }
+    
+    func testGetBeginningDateForGraph() {
+        let oneRepMaxes = viewModel.getOneRepMaxPerDay()
+        let beginningDate = viewModel.getBeginningDateForGraph(oneRepMaxes: oneRepMaxes)
+
+        XCTAssertEqual(beginningDate, DateFormatter().convertDateStringToDate(date: "Aug 01 2022") )
+    }
+    
+    func testGetEndingDateForGraph() {
+        let oneRepMaxes = viewModel.getOneRepMaxPerDay()
+        let endingDate = viewModel.getEndingDateForGraph(oneRepMaxes: oneRepMaxes)
+
+        XCTAssertEqual(endingDate, DateFormatter().convertDateStringToDate(date: "Aug 30 2022"))
     }
 }
 

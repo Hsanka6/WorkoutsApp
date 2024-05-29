@@ -44,8 +44,12 @@ class ExerciseDetailViewController: UIViewController {
         let oneRepMaxes = viewModel.getOneRepMaxPerDay()
         let minYAxis = viewModel.getMinValueForGraph(oneRepMaxes: oneRepMaxes)
         let maxYAxis = viewModel.getMaxValueForGraph(oneRepMaxes: oneRepMaxes)
-        let oneRepMaxChart = OneRepMaxGraphView(data: oneRepMaxes, maxYAxis: maxYAxis , minYAxis: minYAxis)
+        let minXAxis:Date = viewModel.getBeginningDateForGraph(oneRepMaxes: oneRepMaxes)
+        let maxXAxis:Date = viewModel.getEndingDateForGraph(oneRepMaxes: oneRepMaxes)
+        
+        let oneRepMaxChart = OneRepMaxGraphView(data: oneRepMaxes, minYAxis: minYAxis, maxYAxis: maxYAxis, minXAxis: minXAxis, maxXAxis: maxXAxis)
         let hostingController = UIHostingController(rootView: oneRepMaxChart)
+        hostingController.view.backgroundColor = Constants.AppColor.backgroundColor
         addChild(hostingController)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(hostingController.view)

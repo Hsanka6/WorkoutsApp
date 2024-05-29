@@ -41,8 +41,8 @@ class ExercisesViewController: UIViewController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = .black
-        tableView.backgroundColor = .black
+        view.backgroundColor = Constants.AppColor.backgroundColor
+        tableView.backgroundColor = Constants.AppColor.backgroundColor
         tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: ExercisesViewController.cellId)
         tableView.delegate = self
         tableView.dataSource = self

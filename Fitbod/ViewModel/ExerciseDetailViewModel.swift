@@ -45,4 +45,14 @@ class ExerciseDetailViewModel {
         return Int(maxWeight)
     }
     
+    func getBeginningDateForGraph(oneRepMaxes: [OneRepMax]) -> Date {
+        let beginningDate = oneRepMaxes.min { $0.date < $1.date }?.date ?? Date()
+        return beginningDate.startOfMonth() // extends graph horizontally to space out data because graph's stride is by every 2 months
+    }
+    
+    func getEndingDateForGraph(oneRepMaxes: [OneRepMax]) -> Date {
+        let endingDate = oneRepMaxes.max { $0.date < $1.date }?.date ?? Date() 
+        return endingDate.endOfMonth() // extends graph horizontally to space out data because graph's stride is by every 2 months
+    }
+    
 }

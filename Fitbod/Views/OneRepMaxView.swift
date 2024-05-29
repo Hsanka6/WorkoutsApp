@@ -37,11 +37,11 @@ class OneRepMaxView: UIView {
     private func setUpUI() {
         backgroundColor = Constants.AppColor.backgroundColor
         exerciseLabel.font = UIFont.boldSystemFont(ofSize: 25)
-        oneRepMaxWeightLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        exerciseLabel.textColor = Constants.AppColor.primaryColor
         
-        oneRepMaxWeightLabel.textColor = .white
-        oneRepMaxLabel.textColor = .lightGray
-        exerciseLabel.textColor = .white
+        oneRepMaxWeightLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        oneRepMaxWeightLabel.textColor = Constants.AppColor.primaryColor
+        oneRepMaxLabel.textColor = Constants.AppColor.secondaryColor
         
         addSubview(stackView)
         addSubview(oneRepMaxWeightLabel)

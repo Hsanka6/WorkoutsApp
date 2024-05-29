@@ -24,9 +24,10 @@ class WorkoutTableViewCell: UITableViewCell {
     }
 
     private func setUpUI() {
+        backgroundColor = Constants.AppColor.backgroundColor
         contentView.addSubview(oneRepMaxView)
         oneRepMaxView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = Constants.AppColor.backgroundColor
         NSLayoutConstraint.activate([
             oneRepMaxView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             oneRepMaxView.topAnchor.constraint(equalTo: contentView.topAnchor),

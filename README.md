@@ -12,6 +12,9 @@ This app shows a list of exercises. When you tap one an exercise, you can see yo
 - Xcode 15.0+
 - Swift 5
 
+## Assumptions
+1. Didn't need to account for user rotating phone
+
 ## Installation
 
 Download the repository and click run.

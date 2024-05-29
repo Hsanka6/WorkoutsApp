@@ -10,9 +10,11 @@ import Charts
 
 struct OneRepMaxGraphView: View {
     var data: [OneRepMax]
-    var maxYAxis: Int
     var minYAxis: Int
-    
+    var maxYAxis: Int
+    var minXAxis: Date
+    var maxXAxis: Date
+
     var body: some View {
         VStack {
             Chart {
@@ -54,6 +56,7 @@ struct OneRepMaxGraphView: View {
                         AxisValueLabel {
                             Text(dateValue, format: .dateTime.month(.abbreviated).day())
                                 .foregroundColor(Color(Constants.AppColor.primaryColor))
+                                .fontWeight(dateValue.endOfMonth() == maxXAxis ? .bold : .regular)
                         }
                     }
                 }
@@ -67,15 +70,13 @@ struct OneRepMaxGraphView: View {
                 }
             }
             .chartYScale(domain: minYAxis...maxYAxis)
-            .padding()
+            .padding(EdgeInsets(top: 10, leading: Constants.sideMarginPadding, bottom: 0, trailing: Constants.sideMarginPadding))
             .frame(height: 300)
+            .chartXScale(domain: minXAxis...maxXAxis)
         }
-        .background(Color.black)
+        .background(Color(Constants.AppColor.backgroundColor))
         .edgesIgnoringSafeArea(.all)
-        
     }
-    
-   
 }
 
 #Preview {
@@ -83,5 +84,5 @@ struct OneRepMaxGraphView: View {
         OneRepMax(id: "0", weight: 100, date: Date()),
         OneRepMax(id: "1", weight: 200, date: Calendar.current.date(byAdding: .day, value: -1, to: Date())!),
         OneRepMax(id: "2", weight: 300, date: Calendar.current.date(byAdding: .day, value: -2, to: Date())!)
-    ], maxYAxis: 400, minYAxis: 0)
+    ], minYAxis: 0, maxYAxis: 400, minXAxis: Date(), maxXAxis: Date())
 }
